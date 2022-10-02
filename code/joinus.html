@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
+  <link rel="icon" href="../img/icons/favIcon.png" type="image/x-icon"/>
+  <link rel="stylesheet" href="StyleSheet.css" type="text/css"/>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="Scripts.js" type="text/javascript"></script>
+  <script>
+    //  $(document).ready(function(){
+    //    $("#form1").submit(function(){
+    //        alert("Submitted");
+    //    });
+    // });
+    $(document).ready(function(){
+        $("td input").focus(function(){
+            $(this).css("background-color", "rgb(8, 14, 20)");
+        });
+        $("td input").blur(function(){
+            $(this).css("background-color", "#121C26");
+        });
+    });
+    function mouseDown() {
+        document.getElementById("sub").style.backgroundColor = 'rgb(43, 68, 94)';
+    }
+    function mouseUp() {
+        document.getElementById("sub").style.backgroundColor = '#1D3146';
+    }
+  </script>
+  <title>Join Us</title>
+  <style>
+      div.bg-box {
+          display: block;
+          position: relative;
+          margin: 0 auto 5vw auto;
+          width: 50vw;
+          height: 560px;
+          background-color: #0A131C;
+          box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+      }
+      #tabStyle {
+        padding: 70px 0;
+        margin-left: auto;
+        margin-right: auto;
+        width: 50%;
+      }
+      td {
+          font-family: Lato, Arial, Helvetica, sans-serif;
+          font-size: 16px;
+          font-weight: 600;
+          color: #EBE7EC;
+      }
+      td input {
+          font-family: 'Lato Hairline', Arial, Helvetica, sans-serif;
+          font-weight: light;
+          text-align: center;
+          color: #F3F3EF;
+          font-size: 1em;
+          /* width: 200px;
+          height: 40px; */
+          width: 14em;
+          height: 3em;
+          background-color: #121C26;
+          border: none;
+          margin: 7px 33px; /*na mniejszych urzadzeniach pomanipulowac margin 33px i width 14em*/
+      }
+      #sub {
+          display: block;
+          margin-left: auto;
+          margin-right: auto;
+          font-family: Lato, Arial, Helvetica, sans-serif;
+          font-size: 16px;
+          font-weight: 600;
+          color: #EBE7EC;
+          background-color: #1D3146;
+          width: 7em;
+          height: 3em;
+          border: none;
+          cursor: pointer;
+          transition: 0.2s;
+      }
+      #sub:hover {
+        background-color: rgb(23, 42, 61);
+      }
+      @media screen and (max-width: 830px) {
+        div.bg-box {
+            background-color: transparent;
+            box-shadow: none;
+        }
+      }
+      @media screen and (max-width: 480px) {
+        div.bg-box {
+            background-color: transparent;
+            box-shadow: none;
+            height: 480px;
+        }
+        td {
+          font-size: 3vw;
+          position: relative;
+          left: -8.5%;
+         }
+        #sub {
+          font-size: 3vw;
+        }
+      }
+      @media screen and (max-width: 1100px) {
+        br:not(p) {
+        display: none;
+        }
+      }
+  </style>
+ </head>
+<body>
+    <nav>
+
+        <ul id="horMenu">
+            <li><a href="main.html">HOME</a></li>
+            <li><a href="joinus.html">JOIN US</a></li>
+            <li><a href="localshop.html">LOCAL SHOP</a></li>
+            <li><a href="ourhq.html">OUR HQ</a></li>
+        </ul>
+
+        <div id="start" onclick="showMenu()">MENU</div>
+    <div class="topnav">
+    <div id="menu">
+        <a href="main.html">HOME</a>
+        <a href="joinus.html">JOIN US</a>
+        <a href="localshop.html">LOCAL SHOP</a>
+        <a href="ourhq.html">OUR HQ</a>
+    </div>
+    </div>
+
+       </nav>
+       <canvas id="canvas" width="270" height="110">
+         Your browser does not support the HTML5 canvas tag.</canvas>
+         <script>
+             var el = document.getElementById("canvas");
+             var path = el.getContext("2d");
+             path.strokeStyle="#322A0B";
+             path.lineWidth="1.5";
+             path.beginPath();
+             path.arc(100, 45, 21, 0, 2 * Math.PI);
+             path.moveTo(117, 57);
+             path.lineTo(137, 68);
+             path.stroke();
+             path.beginPath();
+             path.arc(170, 20, 16, 0, 2 * Math.PI);
+             path.moveTo(166, 55);
+             path.lineTo(169, 36);
+             path.stroke();
+             path.beginPath();
+             path.arc(160, 80, 25, 0, 2 * Math.PI);
+             path.moveTo(154, 25);
+             path.lineTo(119, 36);
+             path.stroke();
+         </script> 
+       <div class="space"><h1>Want to join?</h1>
+       <p>We appreciate You want to help make our idea bigger and better! We are </br>
+        always open for new members - every person in our team share so many </br>
+        different, amazing ideas and knowladge, it couldn't have been more </br>
+        diverse! Our HQ is in Oslo, but everyone can join. The power of internet </br>
+        helps Us connect, even if we are so for away. </br>
+        If You are ready, there's so many thing You can do in Space Explorers. </br>
+        Just fill the form below and we will contact You shortly. </p>
+       </div>
+       <div class="bg-box">
+        <form id ="form1" action="" method="post" name="joinUs" onsubmit="return validateForm()" autocomplete="off">
+        <table id="tabStyle">
+            <tr>
+                <td>Name</td>
+                <td><input type="text" name="name" onfocus="this.value=''" placeholder="Enter Your name" /></td>
+            </tr>
+            <tr>
+                <td>Surname</td>
+                <td><input type="text" name="surname" onfocus="this.value=''" placeholder="Enter Your surname" /><td>
+            </tr>
+            <tr>
+                <td>Country</td>
+                <td><input type="text" name="country" onfocus="this.value=''" placeholder="Where do You live?" /></td>
+            </tr>
+            <tr>
+                <td>Email adress</td>
+                <td><input type="text" name="email" onfocus="this.value=''" placeholder="ex. 1234@mail.com" /></td>
+            </tr>
+            <tr>
+                <td>Phone number</td>
+                <td><input type="text" name="phone" onfocus="this.value=''" placeholder="ex. 000 000 000" /></td>
+            </tr>
+        </table>
+        <input type="submit" value="Submit" id="sub" onmousedown="mouseDown()" onmouseup="mouseUp()"/>
+    </form>
+       </div>
+      <script>
+       function validateForm() {
+            var missing_data = false;
+            var form = document.forms[0];
+            var text = "";
+
+            if (form.name.value == "") {
+                text += "Name\n"
+                missing_data = true;
+            }
+            if (form.surname.value == "") {
+                text += "Surname\n"
+                missing_data = true;
+            }
+            if (form.country.value == "") {
+                text += "Country\n"
+                missing_data = true;
+            }
+            if (form.email.value == "") {
+                text += "Email adress\n"
+                missing_data = true;
+            }
+            if (form.phone.value == "") {
+                text += "Phone number\n"
+                missing_data = true;
+            }
+            if (!missing_data) {
+                form.submit();
+                alert ("Submitted");
+            }
+            else
+                alert ("You didn't enter:\n" + text);
+            }
+       </script>
+<footer id="foot">
+     <div id="footer-left">
+       <form name="newsletter" action="" method="post" onsubmit="return validateNS()">
+          <input class="ns" type="text" name="email" onfocus="this.value=''" placeholder="Join our newsletter!" />
+          <input id="joinAction" class="join" type="submit" name="send" value="Join" onmousedown="joinDown()" onmouseup="joinUp()" />
+       </form>
+    </div>
+     <div id="footer-right">
+       <ul class="text-style">
+          <li><a href="contact.html">Contact Us</a></li>
+          <li><a href="faq.html">FAQ</a></li>
+          <li>Check Us on Social Media:</li>
+       </ul>
+       <ul>
+        <li class="icon-row"><img src="../img/icons/fbIcon.png" alt="Facebook Icon" style="width: 12px; height: 20px;" /></li>
+        <li class="icon-row"><img src="../img/icons/igIcon.png" alt="Instagram Icon" style="width: 20px; height: 20px;" /></li>
+        <li class="icon-row"><img src="../img/icons/ttIcon.png" alt="Twitter Icon" style="width: 22px; height: 20px;" /></li>
+     </div>
+     <div id="copyright">
+     <p class="text-style" id="copyright-style">
+       &copy 2019 Space Explorers | All rights reserved | Site by Weronika Ruszel
+      </p>
+    </div>
+  </footer>
+</body>
+</html>

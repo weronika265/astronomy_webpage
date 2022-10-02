@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
+  <link rel="icon" href="../img/icons/favIcon.png" type="image/x-icon"/>
+  <link rel="stylesheet" href="StyleSheet.css" type="text/css"/>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="Scripts.js" type="text/javascript"></script>
+  <title>Objects in Space</title>
+  <style>
+      img {
+          width: 410px;
+          height: 300px;
+          box-shadow: 0 4px 5px 2px rgba(0, 0, 0, 0.2);
+      }
+      h3 {
+          color: #EBE7EC;
+          font-size: 40px;
+          font-family: 'Lato Hairline', Arial, Helvetica, sans-serif;
+          font-weight: bolder;
+      }
+      @media screen and (max-width: 1200px) {
+        br:not(p) {
+          display: none;
+        }
+      }
+      @media screen and (max-width: 420px) {
+            img {
+                width: 240px;
+                height: 180px;
+            }
+            h3 {
+                font-size: 25px;
+            }
+        }
+  </style>
+ </head>
+<body>
+ <nav>
+
+    <ul id="horMenu">
+        <li><a href="main.html">HOME</a></li>
+        <li><a href="joinus.html">JOIN US</a></li>
+        <li><a href="localshop.html">LOCAL SHOP</a></li>
+        <li><a href="ourhq.html">OUR HQ</a></li>
+    </ul>
+
+    <div id="start" onclick="showMenu()">MENU</div>
+<div class="topnav">
+<div id="menu">
+    <a href="main.html">HOME</a>
+    <a href="joinus.html">JOIN US</a>
+    <a href="localshop.html">LOCAL SHOP</a>
+    <a href="ourhq.html">OUR HQ</a>
+</div>
+</div>
+
+ </nav>
+ <canvas id="canvas" width="270" height="110">
+   Your browser does not support the HTML5 canvas tag.</canvas>
+   <script>
+       var el = document.getElementById("canvas");
+       var path = el.getContext("2d");
+       path.strokeStyle="#322A0B";
+       path.lineWidth="1.5";
+       path.beginPath();
+       path.arc(100, 45, 21, 0, 2 * Math.PI);
+       path.moveTo(117, 57);
+       path.lineTo(137, 68);
+       path.stroke();
+       path.beginPath();
+       path.arc(170, 20, 16, 0, 2 * Math.PI);
+       path.moveTo(166, 55);
+       path.lineTo(169, 36);
+       path.stroke();
+       path.beginPath();
+       path.arc(160, 80, 25, 0, 2 * Math.PI);
+       path.moveTo(154, 25);
+       path.lineTo(119, 36);
+       path.stroke();
+   </script> 
+ <h1 style="padding-bottom: 15px;">Objects in Space</h1>
+
+    <div class="container1">
+        <h3 class="item1">Comets</h3>
+        <img src="../img/comet.jpeg" alt="Comet" class="item2" />
+        <p class="item3">A comet is an icy, small Solar System body that, when passing
+                close to the Sun, warms and begins to release gases, a
+                process called outgassing. This produces a visible atmosphere
+                or coma, and sometimes also a tail. These phenomena are
+                due to the effects of solar radiation and the solar wind acting
+                upon the nucleus of the comet. Comet nuclei range from a few
+                hundred meters to tens of kilometers across and are
+                composed of loose collections of ice, dust, and small rocky particles.</p>
+     </div>
+     <div class="container1">
+        <h3 class="item1">Nebulas</h3>
+        <img src="../img/nebula.jpg" alt="Nebula" class="item2" />
+        <p class="item3">A nabulais is an interstellar cloud of dust, hydrogen, helium
+                and other ionized gases. </br></br>
+                Most nebulae are of vast size; some are hundreds of light-years
+                in diameter. A nebula that is visible to the human eye
+                from Earth would appear larger, but no brighter, from close by.
+                The Orion Nebula, the brightest nebula in the sky and
+                occupying an area twice the diameter of the full Moon, can be
+                viewed with the naked eye but was missed by early astronomers. </br></br>
+                Many nebulae are visible due to fluorescence caused by
+                embedded hot stars, while others are so diffuse they can only
+                be detected with long exposures and special filters.</p>
+     </div>
+     <div class="container1">
+        <h3 class="item1">Black Holes</h3>
+        <img src="../img/black hole.jpg"  alt="Black Hole" class="item2" />
+        <p class="item3">A black hole is a region of spacetime exhibiting gravitational
+                acceleration so strong that nothing—no particles or even
+                electromagnetic radiation such as light—can escape from it. </br></br>
+                Black holes of stellar mass are expected to form when very
+                massive stars collapse at the end of their life cycle. After a
+                black hole has formed, it can continue to grow by absorbing mass
+                from its surroundings. By absorbing other stars and
+                merging with other black holes, supermassive black holes of
+                millions of solar masses may form.</p>
+     </div>
+
+        <footer id="foot">
+             <div id="footer-left">
+               <form name="newsletter" action="" method="post" onsubmit="return validateNS()">
+                  <input class="ns" type="text" name="email" onfocus="this.value=''" placeholder="Join our newsletter!" />
+                  <input id="joinAction" class="join" type="submit" name="send" value="Join" onmousedown="joinDown()" onmouseup="joinUp()" />
+               </form>
+            </div>
+             <div id="footer-right">
+               <ul class="text-style">
+                  <li><a href="contact.html">Contact Us</a></li>
+                  <li><a href="faq.html">FAQ</a></li>
+                  <li>Check Us on Social Media:</li>
+               </ul>
+               <ul>
+                <li class="icon-row"><img src="../img/icons/fbIcon.png" alt="Facebook Icon" style="width: 12px; height: 20px;" /></li>
+                <li class="icon-row"><img src="../img/icons/igIcon.png" alt="Instagram Icon" style="width: 20px; height: 20px;" /></li>
+                <li class="icon-row"><img src="../img/icons/ttIcon.png" alt="Twitter Icon" style="width: 22px; height: 20px;" /></li>
+               </ul>
+             </div>
+             <div id="copyright">
+             <p class="text-style" id="copyright-style">
+               &copy 2019 Space Explorers | All rights reserved | Site by Weronika Ruszel
+              </p>
+            </div>
+          </footer>
+</body>
+</html>

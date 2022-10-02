@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
+  <link rel="icon" href="../img/icons/favIcon.png" type="image/x-icon"/>
+  <link rel="stylesheet" href="StyleSheet.css" type="text/css"/>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="Scripts.js" type="text/javascript"></script>
+  <title>Solar System</title>
+  <style>
+      #image {
+          width: 100%;
+          height: 600px;
+          margin-bottom: 10%;
+          border: 3px solid rgb(1, 2, 3);
+          box-shadow: 0 4px 5px 2px rgba(0, 0, 0, 0.2);
+      }
+      img {
+          width: 300px;
+          height: 280px;
+      }
+      #btn {
+          position: relative;
+          display: none;
+          position: fixed;
+          bottom: 50px;
+          right: 50px;
+          background-color: rgba(0, 0, 0, 0.705);
+          color: rgba(255, 255, 255, 0.774);
+          cursor: pointer;
+          padding: 33px;
+          border-radius: 50%;
+          outline: none;
+          border: none;
+          box-shadow: 2px 4px 12px 0 rgba(189, 189, 189, 0.411);
+      }
+      #arrow {
+          position: absolute;
+          top: 2.2em;
+          left: 2em;
+          height: 15px;
+          width: 15px;
+          border-style: solid;
+          border-width: 1px 0px 0px 1px;
+          transform: rotate(45deg);
+          background-clip: content-box;
+      }
+      #arrow:hover {
+          border-top-width: 1.5px;
+          border-left-width: 1.5px;
+      }
+      h3 {
+          color: #EBE7EC;
+          font-size: 40px;
+          font-family: 'Lato Hairline', Arial, Helvetica, sans-serif;
+          font-weight: bolder;
+      }
+      #sat {
+            width: 515px;
+            height: 320px;
+        }
+      @media screen and (max-width: 1200px) {
+            #image {
+                display: none;
+            }
+            #map {
+                display: none;
+            }
+       }
+        @media screen and (max-width: 950px) {
+            #btn {
+                left: 43%;
+            }
+        }
+        @media screen and (max-width: 1100px)
+        {
+            #canvas {
+                display: none;
+            }
+        }
+        @media screen and (max-width: 420px) {
+            #sat {
+                width: 440px;
+                height: 310px;
+            }
+            img {
+                width: 240px;
+                height: 230px;
+            }
+            h3 {
+                font-size: 25px;
+            }
+        }
+  </style>
+ </head>
+<body>
+    <button onclick="siteTop()" id="btn"><div id="arrow"></div></button>
+    <script>
+      scrollBtn = document.getElementById("btn");
+      window.onscroll = function() {scrollFunction() };
+      function scrollFunction() {
+          if (document.body.scrollTop > 1500 || document.documentElement.scrollTop > 1500) {
+              scrollBtn.style.display = "block";
+          } else { 
+              scrollBtn.style.display = "none";
+          }
+      }
+      function siteTop() {
+          if($(window).width() >= 400)
+          {
+          document.body.scrollTop = 400; //Safari
+          document.documentElement.scrollTop = 400; //Others
+          }
+          else
+          {
+          document.body.scrollTop = 120;
+          document.documentElement.scrollTop = 120;
+          }
+      }
+      </script>
+ <nav>
+
+    <ul id="horMenu">
+        <li><a href="main.html">HOME</a></li>
+        <li><a href="joinus.html">JOIN US</a></li>
+        <li><a href="localshop.html">LOCAL SHOP</a></li>
+        <li><a href="ourhq.html">OUR HQ</a></li>
+    </ul>
+
+    <div id="start" onclick="showMenu()">MENU</div>
+<div class="topnav">
+<div id="menu">
+    <a href="main.html">HOME</a>
+    <a href="joinus.html">JOIN US</a>
+    <a href="localshop.html">LOCAL SHOP</a>
+    <a href="ourhq.html">OUR HQ</a>
+</div>
+</div>
+
+ </nav>
+ <canvas id="canvas" width="270" height="110">
+   Your browser does not support the HTML5 canvas tag.</canvas>
+   <script>
+       var el = document.getElementById("canvas");
+       var path = el.getContext("2d");
+       path.strokeStyle="#322A0B";
+       path.lineWidth="1.5";
+       path.beginPath();
+       path.arc(100, 45, 21, 0, 2 * Math.PI);
+       path.moveTo(117, 57);
+       path.lineTo(137, 68);
+       path.stroke();
+       path.beginPath();
+       path.arc(170, 20, 16, 0, 2 * Math.PI);
+       path.moveTo(166, 55);
+       path.lineTo(169, 36);
+       path.stroke();
+       path.beginPath();
+       path.arc(160, 80, 25, 0, 2 * Math.PI);
+       path.moveTo(154, 25);
+       path.lineTo(119, 36);
+       path.stroke();
+   </script> 
+    <h1 class="space">Solar System</h1>
+     <img src="../img/solar system 2.jpg" alt="Solar System" id="image" usemap="#planetmap" />
+     <map name="planetmap" id="map">
+         <area shape="circle" coords="-100,360,330" href="#sun" />
+         <area shape="circle" coords="345,305,25" href="#mercury" />
+         <area shape="circle" coords="455,290,30" href="#venus" />
+         <area shape="circle" coords="565,277,27" href="#earth" />
+         <area shape="circle" coords="697,260,30" href="#mars" />
+         <area shape="circle" coords="852,245,70" href="#jupiter" />
+         <area shape="circle" coords="1080,220,100" href="#saturn" />
+         <area shape="circle" coords="1322,180,60" href="#uranus" />
+     </map>
+
+        <div class="container1">
+            <h3 class="item1" id="sun">Sun</h3>
+            <img src="../img/transparent planets/sun.png" alt="Sun" class="item2" />
+            <p class="item3">The Sun is the star at the center of the Solar System. It is a
+                nearly perfect sphere of hot plasma, with internal convective
+                motion that generates a magnetic field via a dynamo process.
+                It is by far the most important source of energy for life on Earth.
+                Its diameter is about 1.39 million kilometers (864,000 miles), or
+                109 times that of Earth, and its mass is about 330,000 times
+                that of Earth. It accounts for about 99.86% of the total mass of
+                the Solar System. Roughly three quarters of the Sun's mass
+                consists of hydrogen (~73%); the rest is mostly helium (~25%),
+                with much smaller quantities of heavier elements, including
+                oxygen, carbon, neon, and iron.</p>
+        </div>
+        <div class="container1">
+            <h3 class="item1" id="mercury">Mercury</h3>
+            <img src="../img/transparent planets/mercury.png" alt="Mercury" class="item2" />
+            <p class="item3">The smallest and innermost planet in the Solar System.
+                Its orbit around the Sun takes only 87.97 days,
+                the shortest of all the planets in the Solar System. </br></br>
+                Like Venus, Mercury orbits the Sun within Earth's orbit as an
+                inferior planet, and its apparent distance from the Sun as
+                viewed from Earth never exceeds 28°. This proximity to the
+                Sun means the planet can only be seen near the western
+                horizon after sunset or eastern horizon before sunrise, usually
+                in twilight. At this time, it may appear as a bright star-like
+                object, but is often far more difficult to observe than Venus.</p>
+        </div>
+        <div class="container1">
+            <h3 class="item1" id="venus">Venus</h3>
+            <img src="../img/transparent planets/venus.png" alt="Venus" class="item2" />
+            <p class="item3">As the second-brightest natural object in the night sky after the
+                Moon, Venus can cast shadows and, rarely, is visible to the
+                naked eye in broad daylight. Venus lies within Earth's orbit,
+                and so never appears to venture far from the Sun. Venus orbits
+                the Sun every 224.7 Earth days. With a rotation period of 243
+                Earth days, it takes longer to rotate about its axis than any
+                planet in the Solar System and goes in the opposite direction
+                to all but Uranus. </br></br>
+                Venus is a terrestrial planet and is sometimes called Earth's
+                "sister planet" because of their similar size, mass, proximity to
+                the Sun, and bulk composition. It is radically different from
+                Earth in other respects. It has the densest atmosphere of the
+                four terrestrial planets, consisting of more than 96% carbon
+                dioxide. The atmospheric pressure at the planet's surface is 92
+                times that of Earth, or roughly the pressure found 900m
+                underwater on Earth. Venus is by far the hottest planet in the
+                Solar System, with a mean surface temperature of 735 K
+                (462 °C), even though Mercury is closer to the Sun. Venus is
+                shrouded by an opaque layer of highly reflective clouds of
+                sulfuric acid, preventing its surface from being seen from
+                space in visible light.</p>
+        </div>
+        <div class="container1">
+            <h3 class="item1" id="earth">Earth</h3>
+            <img src="../img/transparent planets/earth.png" alt="Earth" class="item2" />
+            <p class="item3">Earth is the third planet from the Sun and the only astronomical
+                object known to harbor life. According to radiometric dating and
+                other sources of evidence, Earth formed over 4.5 billion years
+                ago. Earth's gravity interacts with other objects in space,
+                especially the Sun and the Moon, which is Earth's only natural
+                satellite. Earth orbits around the Sun in 365.265 days, a period
+                known as an Earth sidereal year. During this time, Earth
+                rotates about its axis about 366.265 times. </br></br>
+                Earth's axis of rotation is tilted with respect to its orbital plane,
+                producing seasons on Earth. The gravitational interaction
+                between Earth and the Moon causes tides, stabilizes Earth's
+                orientation on its axis, and gradually slows its rotation.
+                Earth is the densest planet in the Solar System and the largest
+                and most massive of the four rocky planets.</p>
+        </div>
+        <div class="container1">
+            <h3 class="item1" id="mars">Mars</h3>
+            <img src="../img/transparent planets/mars.png" alt="Mars" class="item2" />
+            <p class="item3">Mars is the fourth planet from the Sun and the second-smallest
+                planet in the Solar System after Mercury. In English, Mars
+                carries a name of the Roman god of war and is often referred
+                to as the 'Red Planet'. The latter refers to the effect of the iron
+                oxide prevalent on Mars' surface, which gives it a reddish
+                appearance distinctive among the astronomical bodies visible
+                to the naked eye. Mars is a terrestrial planet with a thin
+                atmosphere, having surface features reminiscent both of the
+                impact craters of the Moon and the valleys, deserts, and polar
+                ice caps of Earth. </br></br>
+                There are ongoing investigations assessing the past habitability
+                potential of Mars, as well as the possibility of extant life.</p>
+        </div>
+        <div class="container1">
+            <h3 class="item1" id="jupiter">Jupiter</h3>
+            <img src="../img/transparent planets/jupiter.png" alt="Jupiter" class="item2" />
+            <p class="item3">Jupiter is the fifth planet from the Sun and the largest in the
+                Solar System. It is a gas giant with a mass one-thousandth that
+                of the Sun, but two-and-a-half times that of all the other planets
+                in the Solar System combined. Jupiter is one of the brightest
+                objects visible to the naked eye - on average it is the third
+                brightest natural object in the night sky after the Moon and Venus. </br></br>
+                Jupiter is primarily composed of hydrogen with a quarter of its
+                mass being helium. It may also have a rocky core of heavier
+                elements, but like the other giant planets, Jupiter lacks a
+                well-defined solid surface. The outer atmosphere is visibly
+                segregated into several bands at different latitudes, resulting in
+                turbulence and storms along their interacting boundaries.
+                A prominent result is the Great Red Spot, a giant storm that is
+                known to have existed since at least the 17th century when it
+                was first seen by telescope. </br></br>
+                Jupiter has 79 known moons, including the four large Galilean
+                moons discovered by Galileo Galilei in 1610. Ganymede, the
+                largest of these, has a diameter greater than that of the planetMercury.</p>
+        </div>
+        <div class="container1">
+            <h3 class="item1" id="saturn">Saturn</h3>
+            <img src="../img/transparent planets/saturn.png" alt="Saturn" class="item2" id="sat" />
+            <p class="item3">Saturn is the sixth planet from the Sun and the second-largest
+                in the Solar System, after Jupiter. It is a gas giant with an
+                average radius about nine times that of Earth. It has only one-eighth
+                the average density of Earth; however, with
+                its larger volume, Saturn is over 95 times more massive. </br></br>
+                Saturn's interior is most likely composed of a core of
+                iron–nickel and rock (silicon and oxygen compounds). This core
+                is surrounded by a deep layer of metallic hydrogen, an
+                intermediate layer of liquid hydrogen and liquid helium,
+                and finally a gaseous outer layer. Saturn has a pale yellow hue due
+                to ammonia crystals in its upper atmosphere.</p>
+        </div>
+        <div class="container1">
+            <h3 class="item1" id="uranus">Uranus</h3>
+            <img src="../img/transparent planets/uranus.png" alt="Uranus" class="item2" />
+            <p class="item3">Uranus is the seventh planet from the Sun. It has the third largest
+                planetary radius and fourth-largest planetary mass in
+                the Solar System. Uranus is similar in composition to Neptune,
+                and both have bulk chemical compositions which differ from
+                that of the larger gas giants Jupiter and Saturn. For this
+                reason, scientists often classify Uranus and Neptune as "ice
+                giants" to distinguish them from the gas giants. It has the
+                coldest planetary atmosphere in the Solar System, with a
+                minimum temperature of 49 K (−224 °C). The interior of
+                Uranus is mainly composed of ices and rock.</p>
+        </div>
+
+      <footer id="foot">
+         <div id="footer-left">
+           <form name="newsletter" action="" method="post" onsubmit="return validateNS()">
+              <input class="ns" type="text" name="email" onfocus="this.value=''" placeholder="Join our newsletter!" />
+              <input id="joinAction" class="join" type="submit" name="send" value="Join" onmousedown="joinDown()" onmouseup="joinUp()" />
+           </form>
+        </div>
+         <div id="footer-right">
+           <ul class="text-style">
+              <li><a href="contact.html">Contact Us</a></li>
+              <li><a href="faq.html">FAQ</a></li>
+              <li>Check Us on Social Media:</li>
+           </ul>
+           <ul>
+            <li class="icon-row"><img src="../img/icons/fbIcon.png" alt="Facebook Icon" style="width: 12px; height: 20px;" /></li>
+        <li class="icon-row"><img src="../img/icons/igIcon.png" alt="Instagram Icon" style="width: 20px; height: 20px;" /></li>
+        <li class="icon-row"><img src="../img/icons/ttIcon.png" alt="Twitter Icon" style="width: 22px; height: 20px;" /></li>
+           </ul>
+         </div>
+         <div id="copyright">
+         <p class="text-style" id="copyright-style">
+           &copy 2019 Space Explorers | All rights reserved | Site by Weronika Ruszel
+          </p>
+        </div>
+      </footer>
+</body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <link rel="icon" href="../img/icons/favIcon.png" type="image/x-icon"/>
+  <title>Space Explorers - Welcome!</title>
+  <script>
+      function mobileVer() {
+          var x = window.matchMedia("(max-width: 1024px)");
+          if (x.matches) {
+            window.location = "main.html";
+          }
+      }
+  </script>
+  <style>
+    body {
+        background-image: url("../img/bg.jpg");
+        background-repeat: no-repeat;
+        background-size: 100%;
+        overflow: hidden;
+        background-repeat: repeat-y;
+    }
+    h1 {
+        text-align: center;
+        position: absolute;
+        display: inline-block;
+        top: 22%;
+        left: 50%;
+        transform: translateX(-50%);
+        height: auto;
+        width: 75%;
+        color: #D67C79;
+        font-size: 6.5vw;
+        font-family: 'Lato Hairline', Arial, Helvetica, sans-serif;
+    }
+    div {
+        position: absolute;
+        /* margin: 0 auto; */
+        bottom: 30%;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 16vw;
+        height: 4.1vw;
+        border: 1pt solid #46B2D4;
+        background-color: rgba(0,0,0,0.89);
+    }    
+    p {
+        position: relative;
+        margin: 0 auto;
+        font-size: 1.5vw;
+        font-weight: 650;
+        padding: 18px 0px;
+        text-transform: uppercase;
+        text-align: center;
+        font-family: 'Lato Hairline', Arial, Helvetica, sans-serif;
+        color: #46B2D4;
+    }
+    div:hover {
+        background-color: black;
+        border-color: #1783A5;
+        color: #21ACD8;
+    }
+  </style>
+ </head>
+<body onload="mobileVer()">
+ <h1>Explore Space with us</h1>
+ <a href="main.html" style="text-decoration: none;"><div><p>Discover</p></div></a>
+</body>
+</html>
